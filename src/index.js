@@ -2,6 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-function Person() {}
+function People() {
+	return (
+		<section>
+			<Person name="John" job="Developer" />
+		</section>
+	);
+}
 
-ReactDOM.render(<Person />, document.getElementById('root'));
+const Person = (props) => {
+	console.log(props);
+
+	return (
+		<div>
+			<h1>{props.name}</h1>
+			<p>{props.developer}</p>
+			<hr />
+		</div>
+	);
+};
+
+ReactDOM.render(<People />, document.getElementById('root'));
