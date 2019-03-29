@@ -21,6 +21,7 @@ const Person = (props) => {
 	console.log(props);
 
 	const { name, job, age, company } = props.person;
+	const { children } = props;
 
 	return (
 		<div>
@@ -28,6 +29,7 @@ const Person = (props) => {
 			<p>{job}</p>
 			<p>{age}</p>
 			<p>{company}</p>
+			<p>{children}</p>
 			<hr />
 		</div>
 	);
