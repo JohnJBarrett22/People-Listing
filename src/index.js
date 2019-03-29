@@ -1,38 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
 
-function People() {
-	const friends = [
-		{ name: 'John', job: 'Developer', age: '23', compamny: 'Apple' },
-		{ name: 'Bob', job: 'Designer', age: '22', company: 'Facebook' },
-		{ name: 'Susy', job: 'Artist', age: '21', company: 'Twitter' }
-	];
-	return (
-		<section>
-			<Person person={friends[0]} />
-			<Person person={friends[1]} />
-			<Person person={friends[2]} />
-		</section>
-	);
-}
+ReactDOM.render(<App />, document.getElementById('root'));
 
-const Person = (props) => {
-	console.log(props);
-
-	const { name, job, age, company } = props.person;
-	const { children } = props;
-
-	return (
-		<div>
-			<h1>{name}</h1>
-			<p>{job}</p>
-			<p>{age}</p>
-			<p>{company}</p>
-			<p>{children}</p>
-			<hr />
-		</div>
-	);
-};
-
-ReactDOM.render(<People />, document.getElementById('root'));
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
